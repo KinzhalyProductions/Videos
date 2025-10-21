@@ -1,67 +1,88 @@
-<!-- 🌌 Страница с логотипом и двумя видео -->
-<div style="background-color: #0e0e0e; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: start; padding-top: 60px; color: black;">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videos - Kinzhaly Productions</title>
+  <style>
+    /* Общие стили для страницы */
+    body {
+      background-color: #0e0e0e;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      color: black;
+    }
 
-  <!-- 🔹 Логотип -->
-  <div style="text-align: center; margin-bottom: 40px; animation: fadeDown 1s ease-out;">
-    <img src="kinzhaly.png" alt="Kinzhaly Productions Logo" 
-         style="max-width: 240px; height: auto; border-radius: 12px; transition: transform 1s ease;">
+    /* Стили для контейнера с видео */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      background-color: #0e0e0e; /* Фон для контейнера */
+    }
+
+    iframe {
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+      border: none;
+      margin-bottom: 80px;
+      background-color: #0e0e0e; /* Фон для iframe */
+    }
+
+    /* Анимации */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Стили для логотипа */
+    .logo-container {
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeDown 1s ease-out;
+    }
+
+    .logo-container img {
+      max-width: 240px;
+      height: auto;
+      border-radius: 12px;
+      transition: transform 1s ease;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Логотип -->
+  <div class="logo-container">
+    <img src="kinzhaly.png" alt="Kinzhaly Productions Logo">
   </div>
 
-  <!-- 🔹 Первое видео -->
-  <div style="display: flex; justify-content: center; align-items: center; width: 100%; animation: fadeUp 1.2s ease-out;">
-    <iframe 
-      src="https://drive.google.com/file/d/1URJvP9RENQRd1Yp3LP8PciLKPxaL31hO/preview"
-      width="960" height="540"
-      allow="autoplay; encrypted-media; fullscreen"
-      allowfullscreen
-      style="border-radius: 12px; box-shadow: 0 0 25px rgba(0,0,0,0.6); border: none; margin-bottom: 60px;">
-    </iframe>
+  <!-- Первое видео -->
+  <div class="video-container" style="animation: fadeUp 1.2s ease-out;">
+    <iframe src="https://drive.google.com/file/d/1URJvP9RENQRd1Yp3LP8PciLKPxaL31hO/preview" width="960" height="540" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
   </div>
 
-  <!-- 🔹 Второе видео -->
-  <div style="display: flex; justify-content: center; align-items: center; width: 100%; animation: fadeUp 1.2s ease-out; animation-delay: 0.3s;">
-    <iframe 
-      src="https://drive.google.com/file/d/1XIJsr7JLxe646DfLEEqhYFBoeHUWTlsZ/preview"
-      width="960" height="540"
-      allow="autoplay; encrypted-media; fullscreen"
-      allowfullscreen
-      style="border-radius: 12px; box-shadow: 0 0 25px rgba(0,0,0,0.6); border: none; margin-bottom: 80px;">
-    </iframe>
+  <!-- Второе видео -->
+  <div class="video-container" style="animation: fadeUp 1.2s ease-out; animation-delay: 0.3s;">
+    <iframe src="https://drive.google.com/file/d/1XIJsr7JLxe646DfLEEqhYFBoeHUWTlsZ/preview" width="960" height="540" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
   </div>
-</div>
 
- <!-- 🔹 третье видео -->
-  <div style="display: flex; justify-content: center; align-items: center; width: 100%; animation: fadeUp 1.2s ease-out; animation-delay: 0.3s;">
-    <iframe 
-      src="https://drive.google.com/file/d/1g4SNYEwmWteBifr2-ylxwv90nUV_lR4c/preview"
-      width="960" height="540"
-      allow="autoplay; encrypted-media; fullscreen"
-      allowfullscreen
-      style="border-radius: 12px; box-shadow: 0 0 25px rgba(0,0,0,0.6); border: none; margin-bottom: 80px;">
-    </iframe>
+  <!-- Третье видео -->
+  <div class="video-container" style="animation: fadeUp 1.2s ease-out; animation-delay: 0.6s;">
+    <iframe src="https://drive.google.com/file/d/1g4SNYEwmWteBifr2-ylxwv90nUV_lR4c/preview" width="960" height="540" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
   </div>
-</div>
 
- <!-- 🔹 четвертое видео -->
-  <div style="display: flex; justify-content: center; align-items: center; width: 100%; animation: fadeUp 1.2s ease-out; animation-delay: 0.3s;">
-    <iframe 
-      src="https://drive.google.com/file/d/13MYrsQqdIhwDtAaxGzEWYczEalwQ5kgc/preview"
-      width="960" height="540"
-      allow="autoplay; encrypted-media; fullscreen"
-      allowfullscreen
-      style="border-radius: 12px; box-shadow: 0 0 25px rgba(0,0,0,0.6); border: none; margin-bottom: 80px;">
-    </iframe>
+  <!-- Четвертое видео -->
+  <div class="video-container" style="animation: fadeUp 1.2s ease-out; animation-delay: 0.9s;">
+    <iframe src="https://drive.google.com/file/d/13MYrsQqdIhwDtAaxGzEWYczEalwQ5kgc/preview" width="960" height="540" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
   </div>
-</div>
 
-<style>
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
+</body>
+</html>
