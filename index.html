@@ -21,116 +21,20 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-      background-color: #0e0e0e; /* Фон для контейнера */
-      padding: 10px 0; /* Чтобы элементы не прилипали к краям */
+      background-color: #0e0e0e;
+      padding: 10px 0;
     }
 
     iframe {
-      max-width: 100%; /* Ограничиваем ширину */
-      height: auto; /* Высота будет пропорциональна ширине */
+      max-width: 100%;
+      height: auto;
       border-radius: 12px;
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
       border: none;
       background-color: #0e0e0e;
-      margin-bottom: 20px; /* Уменьшаем отступ для мобильных */
+      margin-bottom: 20px;
     }
 
     /* Анимации */
     @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Стили для логотипа */
-    .logo-container {
-      text-align: center;
-      margin-bottom: 40px;
-      animation: fadeDown 1s ease-out;
-    }
-
-    .logo-container img {
-      max-width: 240px;
-      height: auto;
-      border-radius: 12px;
-      transition: transform 1s ease;
-    }
-
-    /* Медиазапросы для мобильных устройств */
-    @media (max-width: 768px) {
-      iframe {
-        width: 100%; /* Устанавливаем ширину 100% для мобильных */
-        height: 250px; /* Устанавливаем фиксированную высоту */
-      }
-
-      .logo-container img {
-        max-width: 180px; /* Меньше логотип на мобильных устройствах */
-      }
-
-      /* Снижаем отступы для мобильных устройств */
-      .video-container {
-        padding: 20px 0;
-      }
-    }
-
-    /* Для экранов меньше 480px */
-    @media (max-width: 480px) {
-      iframe {
-        height: 200px; /* Еще меньше для маленьких экранов */
-      }
-
-      .logo-container img {
-        max-width: 150px; /* Еще меньше логотип */
-      }
-    }
-
-    /* Для больших экранов (ПК) */
-    @media (min-width: 769px) {
-      iframe {
-        width: 960px; /* Фиксированная ширина на ПК */
-        height: 540px; /* Фиксированная высота */
-      }
-
-      .video-container {
-        padding: 30px 0; /* Увеличиваем отступы для ПК */
-      }
-
-      .logo-container img {
-        max-width: 240px; /* Логотип нормального размера */
-      }
-    }
-
-  </style>
-</head>
-<body>
-  <!-- Логотип -->
-  <div class="logo-container">
-    <img src="kinzhaly.png" alt="Kinzhaly Productions Logo">
-  </div>
-
-  <!-- Первое видео -->
-  <div class="video-container" style="animation: fadeUp 1.2s ease-out;">
-    <iframe src="https://drive.google.com/file/d/1URJvP9RENQRd1Yp3LP8PciLKPxaL31hO/preview" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
-  </div>
-
-  <!-- Второе видео -->
-  <div class="video-container" style="animation: fadeUp 1.2s ease-out; animation-delay: 0.3s;">
-    <iframe src="https://drive.google.com/file/d/1XIJsr7JLxe646DfLEEqhYFBoeHUWTlsZ/preview" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
-  </div>
-
-  <!-- Третье видео -->
-  <div class="video-container" style="animation: fadeUp 1.2s ease-out; animation-delay: 0.6s;">
-    <iframe src="https://drive.google.com/file/d/1g4SNYEwmWteBifr2-ylxwv90nUV_lR4c/preview" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
-  </div>
-
-  <!-- Четвертое видео -->
-  <div class="video-container" style="animation: fadeUp 1.2s ease-out; animation-delay: 0.9s;">
-    <iframe src="https://drive.google.com/file/d/13MYrsQqdIhwDtAaxGzEWYczEalwQ5kgc/preview" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
-  </div>
-
-</body>
-</html>
+      from { opacity: 0; transform: trans
