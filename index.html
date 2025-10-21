@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Videos - Kinzhaly Productions</title>
   <style>
-    /* Общие стили для страницы */
     body {
       background-color: #0e0e0e;
       margin: 0;
@@ -15,27 +14,61 @@
       font-family: Arial, sans-serif;
     }
 
-    /* Стили для контейнера с видео */
     .video-container {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 100%;
       background-color: #0e0e0e;
-      padding: 10px 0;
+      padding: 30px 0;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 960px;
+      max-width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+      background-color: #0e0e0e;
+    }
+
+    .video-thumbnail {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .video-thumbnail img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      transition: transform 0.4s ease;
+    }
+
+    .video-thumbnail:hover img {
+      transform: scale(1.03);
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 64px;
+      color: white;
+      text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+      pointer-events: none;
+      transition: opacity 0.3s ease;
     }
 
     iframe {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+      width: 100%;
+      height: 540px;
+      display: none; /* скрываем iframe до клика */
       border: none;
-      background-color: #0e0e0e;
-      margin-bottom: 20px;
+      border-radius: 12px;
     }
 
-    /* Анимации */
     @keyframes fadeDown {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -46,11 +79,10 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Стили для логотипа */
     .logo-container {
       text-align: center;
       margin-bottom: 40px;
-      padding-top: 60px; /* 🔹 Добавлен отступ сверху */
+      padding-top: 60px;
       animation: fadeDown 1s ease-out;
     }
 
@@ -61,79 +93,77 @@
       transition: transform 1s ease;
     }
 
-    /* Медиазапросы для мобильных устройств */
+    /* Адаптивность */
     @media (max-width: 768px) {
-      iframe {
-        width: 100%;
-        height: 250px;
-      }
-
-      .logo-container {
-        padding-top: 40px; /* немного меньше отступа на телефонах */
-      }
-
-      .logo-container img {
-        max-width: 180px;
-      }
-
-      .video-container {
-        padding: 20px 0;
-      }
+      iframe { height: 250px; }
+      .logo-container { padding-top: 40px; }
+      .logo-container img { max-width: 180px; }
     }
 
     @media (max-width: 480px) {
-      iframe {
-        height: 200px;
-      }
-
-      .logo-container img {
-        max-width: 150px;
-      }
+      iframe { height: 200px; }
+      .logo-container img { max-width: 150px; }
     }
-
-    /* Для больших экранов (ПК) */
-    @media (min-width: 769px) {
-      iframe {
-        width: 960px;
-        height: 540px;
-      }
-
-      .video-container {
-        padding: 30px 0;
-      }
-
-      .logo-container img {
-        max-width: 240px;
-      }
-    }
-
   </style>
 </head>
 <body>
-  <!-- Логотип -->
+  <!-- 🔹 Логотип -->
   <div class="logo-container">
     <img src="kinzhaly.png" alt="Kinzhaly Productions Logo">
   </div>
 
-  <!-- Первое видео -->
+  <!-- 🔹 Видео 1 -->
   <div class="video-container" style="animation: fadeUp 1.2s ease-out;">
-    <iframe src="https://drive.google.com/file/d/1URJvP9RENQRd1Yp3LP8PciLKPxaL31hO/preview" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+    <div class="video-wrapper">
+      <div class="video-thumbnail" onclick="playVideo(this)">
+        <img src="1.jpg" alt="Видео 1">
+        <div class="play-button">▶</div>
+      </div>
+      <iframe data-src="https://drive.google.com/file/d/1URJvP9RENQRd1Yp3LP8PciLKPxaL31hO/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
   </div>
 
-  <!-- Второе видео -->
+  <!-- 🔹 Видео 2 -->
   <div class="video-container" style="animation: fadeUp 1.2s ease-out; animation-delay: 0.3s;">
-    <iframe src="https://drive.google.com/file/d/1XIJsr7JLxe646DfLEEqhYFBoeHUWTlsZ/preview" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+    <div class="video-wrapper">
+      <div class="video-thumbnail" onclick="playVideo(this)">
+        <img src="2.jpg" alt="Видео 2">
+        <div class="play-button">▶</div>
+      </div>
+      <iframe data-src="https://drive.google.com/file/d/1XIJsr7JLxe646DfLEEqhYFBoeHUWTlsZ/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
   </div>
 
-  <!-- Третье видео -->
+  <!-- 🔹 Видео 3 -->
   <div class="video-container" style="animation: fadeUp 1.2s ease-out; animation-delay: 0.6s;">
-    <iframe src="https://drive.google.com/file/d/1g4SNYEwmWteBifr2-ylxwv90nUV_lR4c/preview" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+    <div class="video-wrapper">
+      <div class="video-thumbnail" onclick="playVideo(this)">
+        <img src="3.jpg" alt="Видео 3">
+        <div class="play-button">▶</div>
+      </div>
+      <iframe data-src="https://drive.google.com/file/d/1g4SNYEwmWteBifr2-ylxwv90nUV_lR4c/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
   </div>
 
-  <!-- Четвертое видео -->
+  <!-- 🔹 Видео 4 -->
   <div class="video-container" style="animation: fadeUp 1.2s ease-out; animation-delay: 0.9s;">
-    <iframe src="https://drive.google.com/file/d/13MYrsQqdIhwDtAaxGzEWYczEalwQ5kgc/preview" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+    <div class="video-wrapper">
+      <div class="video-thumbnail" onclick="playVideo(this)">
+        <img src="4.jpg" alt="Видео 4">
+        <div class="play-button">▶</div>
+      </div>
+      <iframe data-src="https://drive.google.com/file/d/13MYrsQqdIhwDtAaxGzEWYczEalwQ5kgc/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
   </div>
 
+  <script>
+    function playVideo(el) {
+      const wrapper = el.parentElement;
+      const iframe = wrapper.querySelector('iframe');
+      iframe.src = iframe.dataset.src;
+      iframe.style.display = 'block';
+      el.style.display = 'none';
+    }
+  </script>
 </body>
 </html>
