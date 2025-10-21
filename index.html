@@ -1,36 +1,34 @@
-<!-- 🌌 Страница с логотипом и видео -->
+<!-- 🌌 Страница с логотипом и двумя видео -->
 <div style="background-color: #0e0e0e; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: start; padding-top: 60px; color: black;">
 
   <!-- 🔹 Логотип -->
   <div style="text-align: center; margin-bottom: 40px; animation: fadeDown 1s ease-out;">
     <img src="kinzhaly.png" alt="Kinzhaly Productions Logo" 
-         style="max-width: 240px; height: auto; border-radius: 12px; transition: transform 1s ease,">
+         style="max-width: 240px; height: auto; border-radius: 12px; transition: transform 1s ease;">
   </div>
 
-  <!-- 🔹 Видео -->
+  <!-- 🔹 Первое видео -->
   <div style="display: flex; justify-content: center; align-items: center; width: 100%; animation: fadeUp 1.2s ease-out;">
     <iframe 
       src="https://drive.google.com/file/d/1URJvP9RENQRd1Yp3LP8PciLKPxaL31hO/preview"
       width="960" height="540"
       allow="autoplay; encrypted-media; fullscreen"
       allowfullscreen
-      style="border-radius: 12px; box-shadow: 0 0 25px rgba(0,0,0,0.6); border: none;">
+      style="border-radius: 12px; box-shadow: 0 0 25px rgba(0,0,0,0.6); border: none; margin-bottom: 60px;">
     </iframe>
   </div>
-</div>
 
- <!-- 🔹 Видео2 -->
-  <div style="display: flex; justify-content: center; align-items: center; width: 100%; animation: fadeUp 1.2s ease-out;">
+  <!-- 🔹 Второе видео -->
+  <div style="display: flex; justify-content: center; align-items: center; width: 100%; animation: fadeUp 1.2s ease-out; animation-delay: 0.3s;">
     <iframe 
       src="https://drive.google.com/file/d/1XIJsr7JLxe646DfLEEqhYFBoeHUWTlsZ/preview"
       width="960" height="540"
       allow="autoplay; encrypted-media; fullscreen"
       allowfullscreen
-      style="border-radius: 12px; box-shadow: 0 0 25px rgba(0,0,0,0.6); border: none;">
+      style="border-radius: 12px; box-shadow: 0 0 25px rgba(0,0,0,0.6); border: none; margin-bottom: 80px;">
     </iframe>
   </div>
 </div>
-
 
 <style>
 @keyframes fadeDown {
@@ -39,4 +37,7 @@
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; tran
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
