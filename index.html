@@ -26,7 +26,7 @@
     }
 
     iframe {
-      max-width: 100%; /* Ограничим ширину */
+      max-width: 100%; /* Ограничиваем ширину */
       height: auto; /* Высота будет пропорциональна ширине */
       border-radius: 12px;
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
@@ -77,6 +77,7 @@
       }
     }
 
+    /* Для экранов меньше 480px */
     @media (max-width: 480px) {
       iframe {
         height: 200px; /* Еще меньше для маленьких экранов */
@@ -84,6 +85,22 @@
 
       .logo-container img {
         max-width: 150px; /* Еще меньше логотип */
+      }
+    }
+
+    /* Для больших экранов (ПК) */
+    @media (min-width: 769px) {
+      iframe {
+        width: 960px; /* Фиксированная ширина на ПК */
+        height: 540px; /* Фиксированная высота */
+      }
+
+      .video-container {
+        padding: 30px 0; /* Увеличиваем отступы для ПК */
+      }
+
+      .logo-container img {
+        max-width: 240px; /* Логотип нормального размера */
       }
     }
 
