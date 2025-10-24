@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Videos - Kinzhaly Productions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: #0e0e0e;
       margin: 0;
       padding: 0;
-      height: 100%;
       color: black;
       font-family: Arial, sans-serif;
     }
@@ -49,22 +49,42 @@
       transform: scale(1.03);
     }
 
+    /* 🎥 Красивая play-кнопка через CSS */
     .play-button {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 64px;
-      color: white;
-      text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-      pointer-events: none;
-      transition: opacity 0.3s ease;
+      width: 80px;
+      height: 80px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .play-button::before {
+      content: "";
+      display: block;
+      margin-left: 6px;
+      width: 0;
+      height: 0;
+      border-left: 22px solid white;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+    }
+
+    .video-thumbnail:hover .play-button {
+      background-color: rgba(255, 255, 255, 0.4);
+      transform: translate(-50%, -50%) scale(1.1);
     }
 
     iframe {
       width: 100%;
       height: 540px;
-      display: none; /* скрываем iframe до клика */
+      display: none;
       border: none;
       border-radius: 12px;
     }
@@ -93,16 +113,30 @@
       transition: transform 1s ease;
     }
 
+    /* 🔹 Текст после 3-го видео */
+    .after-text {
+      font-family: 'Roboto Mono', monospace;
+      color: white;
+      text-align: center;
+      font-size: 24px;
+      margin: 40px 0 10px;
+      letter-spacing: 1px;
+      animation: fadeUp 1s ease-out;
+    }
+
     /* Адаптивность */
     @media (max-width: 768px) {
       iframe { height: 250px; }
       .logo-container { padding-top: 40px; }
       .logo-container img { max-width: 180px; }
+      .play-button { width: 60px; height: 60px; }
+      .play-button::before { border-left: 18px solid white; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
     }
 
     @media (max-width: 480px) {
       iframe { height: 200px; }
       .logo-container img { max-width: 150px; }
+      .after-text { font-size: 18px; }
     }
   </style>
 </head>
@@ -117,7 +151,7 @@
     <div class="video-wrapper">
       <div class="video-thumbnail" onclick="playVideo(this)">
         <img src="1.jpg" alt="Видео 1">
-        <div class="play-button">▶</div>
+        <div class="play-button"></div>
       </div>
       <iframe data-src="https://drive.google.com/file/d/1URJvP9RENQRd1Yp3LP8PciLKPxaL31hO/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
@@ -128,7 +162,7 @@
     <div class="video-wrapper">
       <div class="video-thumbnail" onclick="playVideo(this)">
         <img src="2.jpg" alt="Видео 2">
-        <div class="play-button">▶</div>
+        <div class="play-button"></div>
       </div>
       <iframe data-src="https://drive.google.com/file/d/1XIJsr7JLxe646DfLEEqhYFBoeHUWTlsZ/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
@@ -139,18 +173,21 @@
     <div class="video-wrapper">
       <div class="video-thumbnail" onclick="playVideo(this)">
         <img src="3.jpg" alt="Видео 3">
-        <div class="play-button">▶</div>
+        <div class="play-button"></div>
       </div>
       <iframe data-src="https://drive.google.com/file/d/1g4SNYEwmWteBifr2-ylxwv90nUV_lR4c/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
   </div>
+
+  <!-- 🌟 Текст после 3 видео -->
+  <div class="after-text">Icepot – cable</div>
 
   <!-- 🔹 Видео 4 -->
   <div class="video-container" style="animation: fadeUp 1.2s ease-out; animation-delay: 0.9s;">
     <div class="video-wrapper">
       <div class="video-thumbnail" onclick="playVideo(this)">
         <img src="4.jpg" alt="Видео 4">
-        <div class="play-button">▶</div>
+        <div class="play-button"></div>
       </div>
       <iframe data-src="https://drive.google.com/file/d/13MYrsQqdIhwDtAaxGzEWYczEalwQ5kgc/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
